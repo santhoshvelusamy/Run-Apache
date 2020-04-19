@@ -5,10 +5,6 @@ pipeline {
       }
     }
     stages {
-        stage('Clean previous Builds') {
-            steps {
-                echo 'Building..'              
-            }
         stage('Build') {
             steps {
                 echo 'Building..'
