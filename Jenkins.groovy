@@ -37,6 +37,8 @@ pipeline {
                 git commit -m "Pushing" | true
                 git push -u origin master
                 """
+            }
+        }
     }
 
 }
