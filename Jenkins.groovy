@@ -25,6 +25,7 @@ pipeline {
             steps {
                 echo 'Pushig to Master....'
                 sh"""
+                cd /"${workspace}"
                 set +x
                 git config --global user.name 
                 git config --global user.email
