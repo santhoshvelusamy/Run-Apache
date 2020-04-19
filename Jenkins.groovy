@@ -5,6 +5,10 @@ pipeline {
       }
     }
     stages {
+        stage('Clean previous Builds') {
+            steps {
+                echo 'Building..'              
+            }
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -26,6 +30,7 @@ pipeline {
                 echo 'Pushig to Master....'
                 sh"""
                 cd /"${workspace}"
+                echo "natchi" > test.txt
                 set +x
                 git config --global user.name 
                 git config --global user.email
@@ -36,8 +41,6 @@ pipeline {
                 git commit -m "Pushing" | true
                 git push -u origin master
                 """
-            }
-        }
     }
 
 }
